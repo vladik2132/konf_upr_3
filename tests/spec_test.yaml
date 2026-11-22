@@ -1,0 +1,16 @@
+program:
+  - op: load_const
+    dest: 758
+    value: 112
+
+  - op: read_mem
+    dest: 390
+    src: 965
+
+  - op: write_mem
+    src: 740
+    dest: 924
+
+  - op: unary_minus
+    src_ptr: 766
+    dest: 7
