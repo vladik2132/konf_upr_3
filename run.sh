@@ -1,4 +1,8 @@
-@echo off
-chcp 65001 >nul
-python -m unittest discover -s tests -v
-python -m src.assembler tests/spec_test.yaml output.bin --test
+#!/usr/bin/env bash
+set -e
+
+if [ "$#" -eq 0 ]; then
+    python src/main.py tests/spec_test.yaml output.bin --test
+else
+    python src/main.py "$@"
+fi
