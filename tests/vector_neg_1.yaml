@@ -1,0 +1,87 @@
+program:
+  # Исходный вектор длины 9 по адресам 100..108
+  - op: load_const
+    dest: 100
+    value: 1
+  - op: load_const
+    dest: 101
+    value: 2
+  - op: load_const
+    dest: 102
+    value: 3
+  - op: load_const
+    dest: 103
+    value: 4
+  - op: load_const
+    dest: 104
+    value: 5
+  - op: load_const
+    dest: 105
+    value: 6
+  - op: load_const
+    dest: 106
+    value: 7
+  - op: load_const
+    dest: 107
+    value: 8
+  - op: load_const
+    dest: 108
+    value: 9
+
+  # Указатели на элементы исходного вектора (200..208)
+  - op: load_const
+    dest: 200
+    value: 100
+  - op: load_const
+    dest: 201
+    value: 101
+  - op: load_const
+    dest: 202
+    value: 102
+  - op: load_const
+    dest: 203
+    value: 103
+  - op: load_const
+    dest: 204
+    value: 104
+  - op: load_const
+    dest: 205
+    value: 105
+  - op: load_const
+    dest: 206
+    value: 106
+  - op: load_const
+    dest: 207
+    value: 107
+  - op: load_const
+    dest: 208
+    value: 108
+
+  # Поэлементный унарный минус в новый вектор (300..308)
+  - op: unary_minus
+    src_ptr: 200
+    dest: 300
+  - op: unary_minus
+    src_ptr: 201
+    dest: 301
+  - op: unary_minus
+    src_ptr: 202
+    dest: 302
+  - op: unary_minus
+    src_ptr: 203
+    dest: 303
+  - op: unary_minus
+    src_ptr: 204
+    dest: 304
+  - op: unary_minus
+    src_ptr: 205
+    dest: 305
+  - op: unary_minus
+    src_ptr: 206
+    dest: 306
+  - op: unary_minus
+    src_ptr: 207
+    dest: 307
+  - op: unary_minus
+    src_ptr: 208
+    dest: 308

@@ -1,0 +1,48 @@
+program:
+  # Исходные значения по адресам 100..102
+  - op: load_const
+    dest: 100
+    value: 42
+
+  - op: load_const
+    dest: 101
+    value: 0
+
+  - op: load_const
+    dest: 102
+    value: 1234
+
+  # Указатели на операнды по адресам 200..203
+  - op: load_const
+    dest: 200
+    value: 100
+
+  - op: load_const
+    dest: 201
+    value: 101
+
+  - op: load_const
+    dest: 202
+    value: 102
+
+  - op: load_const
+    dest: 203
+    value: 300
+
+  # Вычисление унарного минуса с записью в 300..303
+  - op: unary_minus
+    src_ptr: 200
+    dest: 300
+
+  - op: unary_minus
+    src_ptr: 201
+    dest: 301
+
+  - op: unary_minus
+    src_ptr: 202
+    dest: 302
+
+  # Проверка отрицания отрицательного числа (-(-42) = 42)
+  - op: unary_minus
+    src_ptr: 203
+    dest: 303
