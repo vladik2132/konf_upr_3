@@ -1,0 +1,63 @@
+program:
+  # Инициализация исходного массива по адресам 100..104
+  - op: load_const
+    dest: 100
+    value: 10
+
+  - op: load_const
+    dest: 101
+    value: 20
+
+  - op: load_const
+    dest: 102
+    value: 30
+
+  - op: load_const
+    dest: 103
+    value: 40
+
+  - op: load_const
+    dest: 104
+    value: 50
+
+  # Чтение элементов из 100..104 в буфер 150..154
+  - op: read_mem
+    dest: 150
+    src: 100
+
+  - op: read_mem
+    dest: 151
+    src: 101
+
+  - op: read_mem
+    dest: 152
+    src: 102
+
+  - op: read_mem
+    dest: 153
+    src: 103
+
+  - op: read_mem
+    dest: 154
+    src: 104
+
+  # Запись элементов из буфера 150..154 в целевой массив 200..204
+  - op: write_mem
+    src: 150
+    dest: 200
+
+  - op: write_mem
+    src: 151
+    dest: 201
+
+  - op: write_mem
+    src: 152
+    dest: 202
+
+  - op: write_mem
+    src: 153
+    dest: 203
+
+  - op: write_mem
+    src: 154
+    dest: 204
