@@ -4,7 +4,7 @@ import argparse
 from dataclasses import dataclass
 from pathlib import Path
 import sys
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 
 OPCODE_LOAD_CONST = 111
 OPCODE_READ_MEM = 17
@@ -163,12 +163,12 @@ def save_memory_dump_xml(
     dump_path: Path,
 ) -> None:
     """Export the requested memory address range to an XML file."""
-    root = ET.Element("memory")
+    root = et.Element("memory")
     for address in range(start, end + STEP_ONE):
-        cell = ET.SubElement(root, "cell", address=str(address))
+        cell = et.SubElement(root, "cell", address=str(address))
         cell.text = str(memory[address])
-    tree = ET.ElementTree(root)
-    ET.indent(tree, space=XML_INDENT)
+    tree = et.ElementTree(root)
+    et.indent(tree, space=XML_INDENT)
     dump_path.parent.mkdir(parents=True, exist_ok=True)
     tree.write(dump_path, encoding="utf-8", xml_declaration=True)
 
